@@ -4,23 +4,18 @@
  * print_alphabet_x10 - print alphabet 10 times
  *
  * Return: void
- */
+ **/
 
-void print_alphabet_x10(void)
+void print_alphabet(void)
 {
-	int round = 0;
-	char letter = 'a';
+	int j;
 
-	while (round < 10)
-	{
-		letter = 'a';
-		while (letter <= 'z')
-		{
-			_putchar(letter);
-			letter++;
-		}
-		_putchar('\n');
+	for (j = 'a'; j <= 'z'; j++)
 
-		round++;
-	}
+{
+	_putchar(j);
+
+}
+	_putchar('\n');
+
 }
