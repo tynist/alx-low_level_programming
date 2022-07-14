@@ -8,17 +8,17 @@
 
 char *leet(char *str)
 {
-	int index1 = 0, index2;
-	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
+	char options[] = {65, 52, 69, 51, 79, 48, 84, 55, 76, 49};
+	int i, j;
 
-	while (str[++index1])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (index2 = 0; index2 <= 7; index2++)
+		for (j = 0; j < 10; j += 2)
 		{
-			if (str[index1] == leet[index2] ||
-			 str[index1] - 32 == leet[index2])
-				str[index1] = index2 + '0';
+			if ((str[i] == options[j] || str[i] == (options[j] + 32)))
+				str[i] = options[j + 1];
 		}
 	}
+
 	return (str);
 }
