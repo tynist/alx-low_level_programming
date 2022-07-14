@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-gdhdhh
-=======
 #include "main.h"
 
 /**
@@ -19,4 +16,3 @@ a[n - 1 - index] = a[index];
 a[index] = tmp;
 }
 }
->>>>>>> be85ee8bcd8952e1804ebc0edd8a2c4bcb2701df
