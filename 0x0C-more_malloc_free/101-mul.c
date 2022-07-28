@@ -1,170 +1,97 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - multiplies two positive numbers
- * @argc: argument count
- * @argv: argument vectors
- * Return: 0
+ * is_digit - checks if a string contains a non-digit char
+ * @s: string to be evaluated
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-int main(int argc, char *argv[])
+int is_digit(char *s)
 {
-	char *f = argv[1];
-	char *s = argv[2];
+	int i = 0;
 
-	if (argc != 3 || !onlyNumbers(f) || !onlyNumbers(s))
+	while (s[i])
 	{
-		printf("Error\n");
-		exit(98);
-	}
-	if (*f == 48 || *s == 48)
-		printf("0\n");
-	else
-		multiply(s, f);
-	return (0);
-}
-
-/**
- * multiply - multiplies two numbers and displays it
- * @f: first number
- * @s: second number
- */
-void multiply(char *f, char *s)
-{
-	int i, len1, len2, total, fdigit, sdigit, res = 0, tmp;
-	int *ptr;
-
-	len1 = _strlen(f);
-	len2 = _strlen(s);
-	tmp = len2;
-	total = len1 + len2;
-	ptr = _calloc(sizeof(int), (len1 + len2));
-	for (len1--; len1 >= 0; len1--)
-	{
-		fdigit = f[len1] - '0';
-		res = 0;
-		len2 = tmp;
-		for (len2--; len2 >= 0; len2--)
-		{
-			sdigit = s[len2] - '0';
-			res += ptr[len2 + len1 + 1] + (fdigit * sdigit);
-			ptr[len1 + len2 + 1] = res % 10;
-			res /= 10;
-		}
-		if (res)
-			ptr[len1 + len2 + 1] = res % 10;
-	}
-	while (*ptr == 0)
-	{
-		ptr++;
-		total--;
-	}
-	for (i = 0; i < total; i++)
-		printf("%i", ptr[i]);
-	printf("\n");
-}
-/**
- * onlyNumbers - determines if string has only numbers
- * @c: input string
- * Return: 0 if false, 1 if true
- */
-int onlyNumbers(char *c)
-{
-	while (*c)
-	{
-		if (*c < '0' || *c > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (0);
-		c++;
+		i++;
 	}
 	return (1);
 }
 
 /**
  * _strlen - returns the length of a string
- * @s: string s
- * Return: length of string
+ * @s: string to evaluate
+ * Return: the length of the string
  */
 int _strlen(char *s)
 {
-	char *p = s;
+	int i = 0;
 
-	while (*s)
-		s++;
-	return (s - p);
-}
-
-/**
- * _memset - fills memory with a constant
- * @s: memory area
- * @b: constant byte
- * @n: bytes of the memory
- * Return: pointer to the memory
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	char *ptr = s;
-
-	while (n--)
-		*s++ = b;
-	return (ptr);
-}
-
-/**
- * _calloc - allocates memory for an array
- * @nmemb: number of elements
- * @size: size of each member
- * Return: pointer of allocated memory
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	void *ptr;
-
-	if (!nmemb || !size)
-		return (NULL);
-	ptr = malloc(size * nmemb);
-	if (!ptr)
-		return (NULL);
-	_memset(ptr, 0, size * nmemb);
-	return (ptr);
-}
-
-
-#include "main.h"
-
-/**
- * main - multiplication of 2 numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0
- */
-int main(int argc, char **argv)
-{
-	int i, j;
-	unsigned long num1, num2;
-
-	if (argc != 3)
+	while (s[i] != '\0')
 	{
-		printf("Error\n");
-		exit(98);
+		i++;
 	}
+	return (i);
+}
 
-	for (i = 1; i < argc; i++)
+/**
+ * errors - handles errors for main
+ */
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: always 0 (Success)
+ */
+int main(int argc, char *argv[])
+{
+	char *s1, *s2;
+	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
+
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
+	if (!result)
+		return (1);
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		digit1 = s1[len1] - '0';
+		carry = 0;
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 		{
-			if (argv[i][j] < 48 || argv[i][j] > 57)
-			{
-				printf("Error\n");
-				exit(98);
-			}
+			digit2 = s2[len2] - '0';
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
+			carry /= 10;
 		}
+		if (carry > 0)
+			result[len1 + len2 + 1] += carry;
 	}
-
-	num1 = atol(argv[1]);
-	num2 = atol(argv[2]);
-
-	printf("%lu\n", num1 * num2);
-
+	for (i = 0; i < len - 1; i++)
+	{
+		if (result[i])
+			a = 1;
+		if (a)
+			_putchar(result[i] + '0');
+	}
+	if (!a)
+		_putchar('0');
+	_putchar('\n');
+	free(result);
 	return (0);
 }
