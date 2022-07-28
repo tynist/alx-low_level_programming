@@ -35,6 +35,5 @@ int main(int argc, char **argv)
 	num2 = atol(argv[2]);
 
 	printf("%lu\n", num1 * num2);
-
 	return (0);
 }
