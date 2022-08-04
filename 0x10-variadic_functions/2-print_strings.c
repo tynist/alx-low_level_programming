@@ -4,6 +4,7 @@
  * print_strings - prints strings
  * @separator: string to be printed between strings
  * @n: number of strings passed to the function
+ * @...: a variable number of arguments to be printed
  * Return: 0
  */
 
