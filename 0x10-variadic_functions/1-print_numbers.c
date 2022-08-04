@@ -4,6 +4,7 @@
  * print_numbers - prints strings
  * @separator: string to be printed between strings
  * @n: number of integers passed to the function
+ * @...: a variable number of arguments to be printed
  * Return: Nothing
  */
 
