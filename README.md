@@ -34,9 +34,9 @@ To run this project, you will need to install the following tools.
 
 
 
-## Authors
+## Author
 
-- [Mawuli Azameti](https://www.github.com/ikmazameti) || Email: ikmazameti@gmail.com
+- [Peter Ughasi](https://www.github.com/tynist) || Linkedin: https://www.linkedin.com/in/peter-ughasi-mypage
 
 
 ## Acknowledgements
