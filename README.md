@@ -10,13 +10,16 @@ This is part of the  Full Stack Software Engineer program organized by Alx  Afri
 
 ### Hatching out
 
-* [0x00. C - Hello, World](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x00-hello_world)
-* [0x01. C - Variables, if, else, while](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x01-variables_if_else_while)
-* [0x02. C - Functions, nested loops](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x02-functions_nested_loops)
-* [0x03. C - Debugging](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x03-debugging)
-* [0x04. C - More functions, more nested loops](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x04-more_functions_nested_loops)
-* [0x05. C - Pointers, arrays and strings](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x05-pointers_arrays_strings)
-* [0x05. C - More pointers, arrays and strings](https://github.com/ikmazameti/alx-low_level_programming/tree/master/0x06-pointers_arrays_strings)
+* [0x00. C - Hello, World](https://github.com/tynist/alx-low_level_programming/tree/master/0x00-hello_world)
+* [0x01. C - Variables, if, else, while](https://github.com/tynist/alx-low_level_programming/tree/master/0x01-variables_if_else_while)
+* [0x02. C - Functions, nested loops](https://github.com/tynist/alx-low_level_programming/tree/master/0x02-functions_nested_loops)
+* [0x03. C - Debugging](https://github.com/tynist/alx-low_level_programming/tree/master/0x03-debugging)
+* [0x04. C - More functions, more nested loops](https://github.com/tynist/alx-low_level_programming/tree/master/0x04-more_functions_nested_loops)
+* [0x05. C - Pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x05-pointers_arrays_strings)
+* [0x06. C - More pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x06-pointers_arrays_strings)
+* [0x07. C - Even More pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x07-pointers_arrays_strings)
+
+
 ## Requirements
 
 To run this project, you will need to install the following tools.
