@@ -3,7 +3,7 @@
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
  * @head: pointer to the head of a list
- * @idx: index of the list where the new node is added
+ * @idx: index of the list where the new node will be added
  * @n: integer for the new node
  * Return: NULL - if it fails
  *         Otherwise - the address of the new node
