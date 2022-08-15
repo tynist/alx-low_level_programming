@@ -6,7 +6,7 @@
  * @index: index of the node - indices starts at 0
  *
  * Return: NULL - if node does not exist nth node
- * 		otherwise - the located node
+ *		otherwise - the located node
  */
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
