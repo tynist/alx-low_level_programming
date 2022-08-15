@@ -18,7 +18,13 @@ This is part of the  Full Stack Software Engineer program organized by Alx  Afri
 * [0x05. C - Pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x05-pointers_arrays_strings)
 * [0x06. C - More pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x06-pointers_arrays_strings)
 * [0x07. C - Even More pointers, arrays and strings](https://github.com/tynist/alx-low_level_programming/tree/master/0x07-pointers_arrays_strings)
-* [0x08. C - Recursion](https://github.com/tynist/alx-low_level_programming/tree/master/0x08-recursion)
+* [0x08. C - Recursion](https://github.com/tynist/alx-low_level_programming/tree/master/0x08-recursion) 
+* [0x09. C - Static libraries](https://github.com/tynist/alx-low_level_programming/tree/master/0x09-static_libraries)
+* [0x0A. C - argc, argv](https://github.com/tynist/alx-low_level_programming/tree/master/0x0A-argc_argv)
+* [0x0B. C - malloc, free](https://github.com/tynist/alx-low_level_programming/tree/master/0x0B-malloc_free)
+* [0x0C. C - More malloc, free](https://github.com/tynist/alx-low_level_programming/tree/master/0x0C-more_malloc_free)
+* [0x0D. C - Preprocessor](https://github.com/tynist/alx-low_level_programming/tree/master/0x0D-preprocessor)
+* [0x0E. C - Structures, typedef](https://github.com/tynist/alx-low_level_programming/tree/master/0x0E-structures_typedef)
 * [0x13. C - More singly linked lists](https://github.com/tynist/alx-low_level_programming/tree/master/0x13-more_singly_linked_lists)
 
 
