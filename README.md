@@ -2,7 +2,7 @@
 # Low-level programming & Algorithm
 
 This repository contains solution programs written for the Low-level programming & Algorithm projects/tasks.
-This is part of the  Full Stack Software Engineer program organized by Alx  Africa which occurred throughout the duration of the year 2022 June, cohort022 curriculum.
+This is part of the  Full Stack Software Engineer program organized by Alx  Africa which occurred throughout the duration of the year 2022 June, cohort08 curriculum.
  The projects are written in C programming language.
 
 
@@ -51,7 +51,8 @@ To run this project, you will need to install the following tools.
 
 ## Author
 
-- [Peter Ughasi](https://www.github.com/tynist) || Linkedin: https://www.linkedin.com/in/peter-ughasi-mypage
+- [Peter Ughasi](https://www.github.com/tynist)
+- [Linkedin](https://www.linkedin.com/in/peter-ughasi-mypage)
 
 
 ## Acknowledgements
