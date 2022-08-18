@@ -3,8 +3,9 @@
 /**
  * flip_bits - counts the number of bits needed to be
  *             flipped to get from one number to another
- * @n: the number one
- * @m: the number two
+ * @n: the number
+ * @n: number one
+ * @m: number two
  * Return: number of bits
  */
 
