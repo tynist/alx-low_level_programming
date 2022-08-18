@@ -3,7 +3,7 @@
 
 -   By Julien Barbier
 
-![](https://alx-intranet.hbtn.io/images/contents/low_level_programming/projects/happy-clapping.gif)
+
 
 Requirements
 ------------
