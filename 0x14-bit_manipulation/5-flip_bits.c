@@ -2,12 +2,13 @@
 
 /**
  * flip_bits - counts the number of bits needed to be
- *             flipped to get from one number to another
+ * flipped to get from one number to another
  * @n: the number
  * @n: number one
  * @m: number two
  * Return: number of bits
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int nbits;
