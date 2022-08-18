@@ -1,4 +1,3 @@
-
 # Low-level programming & Algorithm
 
 This repository contains solution programs written for the Low-level programming & Algorithm projects/tasks.
@@ -30,7 +29,7 @@ This is part of the  Full Stack Software Engineer program organized by Alx  Afri
 * [0x11. C - printf](https://github.com/adeleke123/printf)
 * [0x12. C - Singly linked lists](https://github.com/tynist/alx-low_level_programming/tree/master/0x12-singly_linked_lists)
 * [0x13. C - More singly linked lists](https://github.com/tynist/alx-low_level_programming/tree/master/0x13-more_singly_linked_lists)
-
+* [0x14. C - Bit manipulation](https://github.com/tynist/alx-low_level_programming/tree/master/0x14-bit_manipulation)
 
 ## Requirements
 
