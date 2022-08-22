@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 =======
 # Low-level programming & Algorithm
 
