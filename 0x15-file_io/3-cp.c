@@ -3,71 +3,112 @@
 #include <stdlib.h>
 
 /**
- * error_file - checks if files can be opened.
- * @file_from: file_from.
- * @file_to: file_to.
- * @argv: arguments vector.
- * Return: no return.
+ * check97 - checks for the correct number of arguments
+ * @argc: number of arguments
+ *
+ * Return: void
  */
-void error_file(int file_from, int file_to, char *argv[])
+void check97(int argc)
 {
-	if (file_from == -1)
+	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+}
+
+/**
+ * check98 - checks that file_from exists and can be read
+ * @check: checks if true of false
+ * @file: file_from name
+ * @op_from: file descriptor of file_from, or -1
+ * @op_to: file descriptor of file_to, or -1
+ *
+ * Return: void
+ */
+void check98(ssize_t check, char *file, int op_from, int op_to)
+{
+	if (check == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		if (op_from != -1)
+			close(op_from);
+		if (op_to != -1)
+			close(op_to);
 		exit(98);
 	}
-	if (file_to == -1)
+}
+
+/**
+ * check99 - checks that file_to was created and/or can be written to
+ * @check: checks if true of false
+ * @file: file_to name
+ * @op_from: file descriptor of file_from, or -1
+ * @op_to: file descriptor of file_to, or -1
+ *
+ * Return: void
+ */
+void check99(ssize_t check, char *file, int op_from, int op_to)
+{
+	if (check == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		if (op_from != -1)
+			close(op_from);
+		if (op_to != -1)
+			close(op_to);
 		exit(99);
 	}
 }
 
 /**
- * main - check the code
- * @argc: number of arguments.
- * @argv: arguments vector.
- * Return: Always 0.
+ * check100 - checks that file descriptors were closed properly
+ * @check: checks if true or false
+ * @fop: file descriptor
+ *
+ * Return: void
+ */
+void check100(int check, int op)
+{
+	if (check == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close op %d\n", op);
+		exit(100);
+	}
+}
+/**
+ * main - opies the content of a file to another file.
+ * @argc: number of arguments passed
+ * @argv: array of pointers to the arguments
+ *
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, err_close;
-	ssize_t nchars, wri;
-	char buff[1024];
+	int op_from, op_to, close_to, close_from;
+	ssize_t lenr, lenw;
+	char buffer[1024];
+	mode_t file_perm;
 
-	if (argc != 3)
+	check97(argc);
+	op_from = open(argv[1], O_RDONLY);
+	check98((ssize_t)op_from, argv[1], -1, -1);
+	file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	op_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_perm);
+	check99((ssize_t)op_to, argv[2], op_from, -1);
+	lenr = 1024;
+	while (lenr == 1024)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
-		exit(97);
+		lenr = read(op_from, buffer, 1024);
+		check98(lenr, argv[1], op_from, op_to);
+		lenw = write(op_to, buffer, lenr);
+		if (lenw != lenr)
+			lenw = -1;
+		check99(lenw, argv[2], op_from, op_to);
 	}
-
-	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	error_file(file_from, file_to, argv);
-
-	nchars = 1024;
-	while (nchars == 1024)
-	{
-		nchars = read(file_from, buff, 1024);
-		if (nchars == -1)
-			error_file(-1, 0, argv);
-		wri = write(file_to, buff, nchars);
-		if (wri == -1)
-			error_file(0, -1, argv);
-	}
-
-	err_close = close(file_from);
-	if (err_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close op %d\n", file_from);
-		exit(100);
-	}
-
-	err_close = close(file_to);
-	if (err_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close op %d\n", file_from);
-		exit(100);
-	}
+	close_to = close(op_to);
+	close_from = close(op_from);
+	check100(close_to, op_to);
+	check100(close_from, op_from);
 	return (0);
 }
