@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		wri = write(op, buff, r);
+		wri = write(op, buff, re);
 		if (op == -1 || wri == -1)
 		{
 			dprintf(STDERR_FILENO,
