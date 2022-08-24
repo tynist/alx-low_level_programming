@@ -31,6 +31,8 @@ This is part of the  Full Stack Software Engineer program organized by Alx  Afri
 * [0x12. C - Singly linked lists](https://github.com/tynist/alx-low_level_programming/tree/master/0x12-singly_linked_lists)
 * [0x13. C - More singly linked lists](https://github.com/tynist/alx-low_level_programming/tree/master/0x13-more_singly_linked_lists)
 * [0x14. C - Bit manipulation](https://github.com/tynist/alx-low_level_programming/tree/master/0x14-bit_manipulation)
+* [0x15. C - File I/O](https://github.com/tynist/alx-low_level_programming/tree/master/0x15-file_io)
+
 
 ## Requirements
 
@@ -64,4 +66,3 @@ All work contained in this project was completed as part of the curriculum for A
 For more information, visit this link.
 * [ALX](https://www.alxafrica.com/)
 * [Holberton School](https://www.holbertonschool.com/)
->>>>>>> 46c574f9a7269981222a12874a18a6cb276ac4be
