@@ -4,7 +4,7 @@
  * hash_table_get - Get the value from a hash table
  * @ht: Hash table to search into
  * @key: Key you are looking for
- * Return: Value if founded by key, otherwise NULL 
+ * Return: Value if founded by key, otherwise NULL
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
