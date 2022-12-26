@@ -30,17 +30,22 @@ Learning Objectives
 At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/2LjkSexDe-xcLQZ0f5ungQ "explain to anyone"), **without the help of Google**:
 
 ### General
-
 -   What is the difference between automatic and dynamic allocation
 -   What is `malloc` and `free` and how to use them
 -   Why and when use `malloc`
 -   How to use `valgrind` to check for memory leak
 
+### Copyright - Plagiarism
+-  You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+-  You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+-  You are not allowed to publish any content of this project.
+-  Any form of plagiarism is strictly forbidden and will result in removal from the program.
+
+
 Requirements
 ------------
 
 ### General
-
 -   Allowed editors: `vi`, `vim`, `emacs`
 -   All your files will be compiled on Ubuntu 20.04 LTS using `gcc`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 -   All your files should end with a new line
@@ -55,13 +60,11 @@ Requirements
 -   The prototypes of all your functions and the prototype of the function `_putchar` should be included in your header file called `main.h`
 -   Don't forget to push your header file
 
+
 Tasks
 -----
 
 ### 0\. Float like a butterfly, sting like a bee
-
-mandatory
-
 Write a function that creates an array of chars, and initializes it with a specific char.
 
 -   Prototype: `char *create_array(unsigned int size, char c);`
@@ -138,15 +141,13 @@ julien@ubuntu:~/0x0a. malloc, free$
 ```
 
 **Repo:**
-
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x0B-malloc_free`
 -   File: `0-create_array.c`
 
+
+
 ### 1\. The woman who has no imagination has no wings
-
-mandatory
-
 Write a function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
 
 -   Prototype: `char *_strdup(char *str);`
@@ -185,19 +186,16 @@ julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu
 julien@ubuntu:~/0x0a. malloc, free$ ./s
 Holberton
 julien@ubuntu:~/0x0a. malloc, free$
-
 ```
 
 **Repo:**
-
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x0B-malloc_free`
 -   File: `1-strdup.c`
 
+
+
 ### 2\. He who is not courageous enough to take risks will accomplish nothing in life
-
-mandatory
-
 Write a function that concatenates two strings.
 
 -   Prototype: `char *str_concat(char *s1, char *s2);`
@@ -234,19 +232,16 @@ julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu
 julien@ubuntu:~/c/curriculum_by_julien/holbertonschool-low_level_programming/0x0a. malloc, free$ ./c | cat -e
 Betty Holberton$
 julien@ubuntu:~/c/curriculum_by_julien/holbertonschool-low_level_programming/0x0a. malloc, free$
-
 ```
 
 **Repo:**
-
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x0B-malloc_free`
 -   File: `2-str_concat.c`
 
+
+
 ### 3\. If you even dream of beating me you'd better wake up and apologize
-
-mandatory
-
 Write a function that returns a pointer to a 2 dimensional array of integers.
 
 -   Prototype: `int **alloc_grid(int width, int height);`
@@ -320,19 +315,16 @@ julien@ubuntu:~/0x0a. malloc, free$ ./g
 0 0 0 0 0 0
 0 0 0 0 402 0
 julien@ubuntu:~/0x0a. malloc, free$
-
 ```
 
 **Repo:**
-
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x0B-malloc_free`
 -   File: `3-alloc_grid.c`
 
+
+
 ### 4\. It's not bragging if you can back it up
-
-mandatory
-
 Write a function that frees a 2 dimensional grid previously created by your `alloc_grid` function.
 
 -   Prototype: `void free_grid(int **grid, int height);`
@@ -419,11 +411,122 @@ julien@ubuntu:~/0x0a. malloc, free$ valgrind ./f
 ==5013== For counts of detected and suppressed errors, rerun with: -v
 ==5013== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 julien@ubuntu:~/0x0a. malloc, free$
-
 ```
 
 **Repo:**
-
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x0B-malloc_free`
 -   File: `4-free_grid.c`
+
+
+5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe
+#advanced
+Score: 100.0% (Checks completed: 100.0%)
+Write a function that concatenates all the arguments of your program.
+
+Prototype: char *argstostr(int ac, char **av);
+Returns NULL if ac == 0 or av == NULL
+Returns a pointer to a new string, or NULL if it fails
+Each argument should be followed by a \n in the new string
+julien@ubuntu:~/0x0a. malloc, free$ cat 100-main.c
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char *av[])
+{
+    char *s;
+
+    s = argstostr(ac, av);
+    if (s == NULL)
+    {
+        return (1);
+    }
+    printf("%s", s);
+    free(s);
+    return (0);
+}
+julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 100-argstostr.c -o args
+julien@ubuntu:~/0x0a. malloc, free$ ./args I will "show you" how great I am
+./args
+I
+will
+show you
+how
+great
+I
+am
+julien@ubuntu:~/0x0a. malloc, free$
+Repo:
+
+GitHub repository: alx-low_level_programming
+Directory: 0x0B-malloc_free
+File: 100-argstostr.c
+    
+6. I will show you how great I am
+#advanced
+Score: 100.0% (Checks completed: 100.0%)
+Write a function that splits a string into words.
+
+Prototype: char **strtow(char *str);
+The function returns a pointer to an array of strings (words)
+Each element of this array should contain a single word, null-terminated
+The last element of the returned array should be NULL
+Words are separated by spaces
+Returns NULL if str == NULL or str == ""
+If your function fails, it should return NULL
+julien@ubuntu:~/0x0a. malloc, free$ cat 101-main.c
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * print_tab - Prints an array of string
+ * @tab: The array to print
+ *
+ * Return: nothing
+ */
+void print_tab(char **tab)
+{
+    int i;
+
+    for (i = 0; tab[i] != NULL; ++i)
+    {
+        printf("%s\n", tab[i]);
+    }
+}
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: 1 if an error occurred, 0 otherwise
+ */
+int main(void)
+{
+    char **tab;
+
+    tab = strtow("      ALX School         #cisfun      ");
+    if (tab == NULL)
+    {
+        printf("Failed\n");
+        return (1);
+    }
+    print_tab(tab);
+    return (0);
+}
+julien@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-main.c 101-strtow.c -o strtow
+julien@ubuntu:~/0x0a. malloc, free$ ./strtow | cat -e
+ALX$
+School$
+#cisfun$
+julien@ubuntu:~/0x0a. malloc, free$
+Repo:
+
+GitHub repository: alx-low_level_programming
+Directory: 0x0B-malloc_free
+File: 101-strtow.c
