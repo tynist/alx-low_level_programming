@@ -1,11 +1,11 @@
-#include "m.h"
+
+#include "main.h"
 
 /**
- * print_holberton - print the logo of Holberton
- *
+ * print_school
  * Return: Nothing
- *
  */
+
 void print_school(void)
 {
 	printf("j#0000000000000000000000000000000000000\n");
