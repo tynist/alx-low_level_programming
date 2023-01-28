@@ -1,8 +1,3 @@
-/*
- * File: 106-linear_skip.c
- * Auth: Brennan D Baraban
- */
-
 #include "search_algos.h"
 
 /**
@@ -11,8 +6,8 @@
  * @list: A pointer to the  head of the linked list to search.
  * @value: The value to search for.
  *
- * Return: If the value is not present or the head of the list is NULL, NULL.
- *         Otherwise, a pointer to the first node where the value is located.
+ * Return: the index where the value is located,
+ *         Otherwise -1 if the value is not present.
  *
  * Description: Prints a value every time it is compared in the list.
  *              Uses the square root of the list size as the jump step.
