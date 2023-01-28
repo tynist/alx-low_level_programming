@@ -8,7 +8,7 @@
  *                 of integers using binary search
  * @array: pointer to the first element of the array to search
  * @size: the number of elements in the array.
- * @value: the value to search for
+ * @value: the value to search for.
  * Return: the index where the value is located,
  *         Otherwise -1 If the value is not present or the array is NULL
  */
